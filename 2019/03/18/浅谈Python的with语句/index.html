@@ -123,7 +123,7 @@
 
 
 
-  <title>On the way</title>
+  <title>浅谈Python的with语句 | On the way</title>
   
 
 
@@ -142,8 +142,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -258,9 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/浅谈Python的with语句/" itemprop="url">浅谈Python的with语句</a></h1>
+          <h1 class="post-title" itemprop="name headline">浅谈Python的with语句</h1>
         
 
         <div class="post-meta">
@@ -308,9 +305,7 @@
       
 
       
-        
-          
-            <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>with 语句是从 Python 2.5 开始引入的一种与异常处理相关的功能（2.5 版本中要通过 from <strong>future</strong> import with_statement 导入后才可以使用），从 2.6 版本开始缺省可用（参考 <a href="http://docs.python.org/release/2.6/whatsnew/2.6.html#pep-343-the-with-statement" target="_blank" rel="noopener">What’s new in Python 2.6?</a> 中 with 语句相关部分介绍）。with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。</p>
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>with 语句是从 Python 2.5 开始引入的一种与异常处理相关的功能（2.5 版本中要通过 from <strong>future</strong> import with_statement 导入后才可以使用），从 2.6 版本开始缺省可用（参考 <a href="http://docs.python.org/release/2.6/whatsnew/2.6.html#pep-343-the-with-statement" target="_blank" rel="noopener">What’s new in Python 2.6?</a> 中 with 语句相关部分介绍）。with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>要使用 with 语句，首先要明白上下文管理器这一概念。有了上下文管理器，with 语句才能工作。</p>
 <p>下面是一组与上下文管理器和with 语句有关的概念。</p>
 <p><strong>上下文管理协议（Context Management Protocol）</strong>：包含方法 <strong>enter</strong>() 和 <strong>exit</strong>()，支持</p>
@@ -387,8 +382,6 @@
 <p>closing 适用于提供了 close() 实现的对象，比如网络连接、数据库连接等，也可以在自定义类时通过接口 close() 来执行所需要的资源“清理”工作。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本文对 with 语句的语法和工作机理进行了介绍，并通过示例介绍了如何实现自定义的上下文管理器，最后介绍了如何使用 contextlib 模块来简化上下文管理器的编写。</p>
 
-          
-        
       
     </div>
     
@@ -403,140 +396,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://philchow.top/2019/03/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Phil Chow">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/12/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T11:50:19+08:00">2019-03-12</time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -546,10 +435,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +447,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -577,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -629,6 +532,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-number">2.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法和工作原理"><span class="nav-number">3.</span> <span class="nav-text">基本语法和工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-1-with-语句的语法格式"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">清单 1. with 语句的语法格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-2-使用-with-语句操作文件对象"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">清单 2. 使用 with 语句操作文件对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-3-try-finally-方式操作文件对象"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">清单 3. try/finally 方式操作文件对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-4-with-语句执行过程"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">清单 4. with 语句执行过程</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义上下文管理器"><span class="nav-number">4.</span> <span class="nav-text">自定义上下文管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-5-自定义支持-with-语句的对象"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">清单 5. 自定义支持 with 语句的对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-6-使用自定义的支持-with-语句的对象"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">清单 6. 使用自定义的支持 with 语句的对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-7-with-语句1执行结果"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">清单 7. with 语句1执行结果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-8-with-语句2执行结果"><span class="nav-number">4.0.0.4.</span> <span class="nav-text">清单 8. with 语句2执行结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contextlib-模块"><span class="nav-number">5.</span> <span class="nav-text">contextlib 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器-contextmanager"><span class="nav-number">5.1.</span> <span class="nav-text">装饰器 contextmanager</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-9-装饰器-contextmanager-使用示例"><span class="nav-number">5.1.0.1.</span> <span class="nav-text">清单 9. 装饰器 contextmanager 使用示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-10-contextmanager-使用示例执行结果"><span class="nav-number">5.1.0.2.</span> <span class="nav-text">清单 10. contextmanager 使用示例执行结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-nested"><span class="nav-number">5.2.</span> <span class="nav-text">函数 nested</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-11-nested-语法"><span class="nav-number">5.2.0.1.</span> <span class="nav-text">清单 11. nested 语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-12-nested-执行过程"><span class="nav-number">5.2.0.2.</span> <span class="nav-text">清单 12. nested 执行过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下文管理器-closing"><span class="nav-number">5.3.</span> <span class="nav-text">上下文管理器 closing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-13-上下文管理-closing-实现"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">清单 13. 上下文管理 closing 实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-14-自定义支持-closing-的对象"><span class="nav-number">5.3.0.2.</span> <span class="nav-text">清单 14. 自定义支持 closing 的对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-15-自定义-closing-对象的输出结果"><span class="nav-number">5.3.0.3.</span> <span class="nav-text">清单 15. 自定义 closing 对象的输出结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -752,6 +671,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 
