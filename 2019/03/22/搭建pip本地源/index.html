@@ -124,7 +124,7 @@
 
 
 
-  <title>Hello World | On the way</title>
+  <title>搭建pip本地源 | On the way</title>
   
 
 
@@ -241,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://philchow.top/2019/03/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://philchow.top/2019/03/22/搭建pip本地源/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Phil Chow">
@@ -258,7 +258,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">搭建pip本地源</h1>
         
 
         <div class="post-meta">
@@ -270,7 +270,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T11:50:19+08:00">2019-03-12</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T16:17:59+08:00">2019-03-22</time>
             
 
             
@@ -306,16 +306,12 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>很多机器不通外网，无法通过pip命令直接安装，故使用pip2pi和pypiserver搭建本地源。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>默认前期已安装Python环境、pip库管理工具，作为本地源的仓库服务器最好可访问外网。</p>
+<h2 id="安装pip2pi、pypiserver"><a href="#安装pip2pi、pypiserver" class="headerlink" title="安装pip2pi、pypiserver"></a>安装pip2pi、pypiserver</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip2pi</span><br><span class="line">pip install pypiserver</span><br></pre></td></tr></table></figure>
+<h2 id="使用pip2tgz命令下载requirements清单中的包以及依赖包"><a href="#使用pip2tgz命令下载requirements清单中的包以及依赖包" class="headerlink" title="使用pip2tgz命令下载requirements清单中的包以及依赖包"></a>使用pip2tgz命令下载requirements清单中的包以及依赖包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> pip2tgz命令默认在python/bin/下 ，requirements为所需库列表清单</span><br><span class="line"><span class="meta">#</span> /save/to/path 自定义仓库目录</span><br><span class="line">pip2tgz /save/to/path -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h2 id="使用pypiserver部署本地源"><a href="#使用pypiserver部署本地源" class="headerlink" title="使用pypiserver部署本地源"></a>使用pypiserver部署本地源</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 监听端口8080, -r指定本地仓库位置，fallback-url如果本地仓库不存在则去后面定义的阿里镜像下载</span><br><span class="line">pypi-server -p 8080 -r /save/to/path --fallback-url=http://mirrors.aliyun.com/pypi/simple/ &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="其他客户端访问"><a href="#其他客户端访问" class="headerlink" title="其他客户端访问"></a>其他客户端访问</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ip表示本地源服务器地址</span><br><span class="line">pip install numpy -i http://ip:8080 --trusted-host ip</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -330,6 +326,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
 
       
       
@@ -339,15 +341,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/18/浅谈Python的with语句/" rel="next" title="浅谈Python的with语句">
+                <i class="fa fa-chevron-left"></i> 浅谈Python的with语句
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/18/浅谈Python的with语句/" rel="prev" title="浅谈Python的with语句">
-                浅谈Python的with语句 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,7 +472,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">2.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装pip2pi、pypiserver"><span class="nav-number">3.</span> <span class="nav-text">安装pip2pi、pypiserver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pip2tgz命令下载requirements清单中的包以及依赖包"><span class="nav-number">4.</span> <span class="nav-text">使用pip2tgz命令下载requirements清单中的包以及依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pypiserver部署本地源"><span class="nav-number">5.</span> <span class="nav-text">使用pypiserver部署本地源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他客户端访问"><span class="nav-number">6.</span> <span class="nav-text">其他客户端访问</span></a></li></ol></div>
             
 
           </div>
