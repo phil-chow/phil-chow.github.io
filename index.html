@@ -76,13 +76,13 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://philchow.top/categories/index.html">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="http://philchow.top/tags/index.html">
 <meta property="og:site_name" content="On my way">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-26T01:45:21.788Z">
+<meta property="og:updated_time" content="2019-03-26T01:53:12.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="tags">
 
 
 
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="http://philchow.top/categories/">
+  <link rel="canonical" href="http://philchow.top/tags/">
 
 
 
@@ -352,9 +352,9 @@
             <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>很多机器不通外网，无法通过pip命令直接安装，故使用pip2pi和pypiserver搭建本地源。</p>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>默认前期已安装Python环境、pip库管理工具，作为本地源的仓库服务器最好可访问外网。</p>
 <h2 id="安装pip2pi、pypiserver"><a href="#安装pip2pi、pypiserver" class="headerlink" title="安装pip2pi、pypiserver"></a>安装pip2pi、pypiserver</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip2pi</span><br><span class="line">pip install pypiserver</span><br></pre></td></tr></table></figure>
-<h2 id="使用pip2tgz命令下载requirements清单中的包以及依赖包"><a href="#使用pip2tgz命令下载requirements清单中的包以及依赖包" class="headerlink" title="使用pip2tgz命令下载requirements清单中的包以及依赖包"></a>使用pip2tgz命令下载requirements清单中的包以及依赖包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> pip2tgz命令默认在python/bin/下 ，requirements为所需库列表清单</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> /save/to/path 自定义仓库目录</span></span><br><span class="line">pip2tgz /save/to/path -r requirements.txt</span><br></pre></td></tr></table></figure>
-<h2 id="使用pypiserver部署本地源"><a href="#使用pypiserver部署本地源" class="headerlink" title="使用pypiserver部署本地源"></a>使用pypiserver部署本地源</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 监听端口8080, -r指定本地仓库位置，fallback-url如果本地仓库不存在则去后面定义的阿里镜像下载</span></span><br><span class="line">pypi-server -p 8080 -r /save/to/path --fallback-url=http://mirrors.aliyun.com/pypi/simple/ &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="其他客户端访问"><a href="#其他客户端访问" class="headerlink" title="其他客户端访问"></a>其他客户端访问</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ip表示本地源服务器地址</span></span><br><span class="line">pip install numpy -i http://ip:8080 --trusted-host ip</span><br></pre></td></tr></table></figure>
+<h2 id="使用pip2tgz命令下载requirements清单中的包以及依赖包"><a href="#使用pip2tgz命令下载requirements清单中的包以及依赖包" class="headerlink" title="使用pip2tgz命令下载requirements清单中的包以及依赖包"></a>使用pip2tgz命令下载requirements清单中的包以及依赖包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> pip2tgz命令默认在python/bin/下 ，requirements为所需库列表清单</span><br><span class="line"><span class="meta">#</span> /save/to/path 自定义仓库目录</span><br><span class="line">pip2tgz /save/to/path -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h2 id="使用pypiserver部署本地源"><a href="#使用pypiserver部署本地源" class="headerlink" title="使用pypiserver部署本地源"></a>使用pypiserver部署本地源</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 监听端口8080, -r指定本地仓库位置，fallback-url如果本地仓库不存在则去后面定义的阿里镜像下载</span><br><span class="line">pypi-server -p 8080 -r /save/to/path --fallback-url=http://mirrors.aliyun.com/pypi/simple/ &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="其他客户端访问"><a href="#其他客户端访问" class="headerlink" title="其他客户端访问"></a>其他客户端访问</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ip表示本地源服务器地址</span><br><span class="line">pip install numpy -i http://ip:8080 --trusted-host ip</span><br></pre></td></tr></table></figure>
           
         
       
